@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thank You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      animation: fadeIn 1.2s;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-top: 60px;
+    }
+
+    .box {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #b03060;
+      margin-top: 20px;
+    }
+
+    a {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      background: #d6336c;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 20px;
+    }
+
+    /* Floating flowers */
+    .flower {
+      position: fixed;
+      bottom: -20px;
+      animation: floatUp 6s linear infinite;
+      font-size: 22px;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Thank You 💐</h1>
+
+<div class="box">
+   <p>
+    Thank you to all our family and friends  
+    for being part of our journey,  
+    for your love, blessings, and support  
+    throughout these beautiful 25 years.
+  </p>
+
+  <p class="quote">
+    “A successful marriage requires falling in love  
+    many times, always with the same person.”
+  </p>
+
+  <p>
+    With love and gratitude,<br>
+    <strong>Gejo & Sunu ❤️</strong>
+  </p>
+</div>
+
+<a href="anniversary.html">🏠 Back to Home</a>
+
+<!-- Background Music -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Continue music
+  const music = document.getElementById("bg-music");
+  if (localStorage.getItem("musicPlaying") === "true") {
+    music.play();
+  }
+
+  // Floating flowers
+  setInterval(() => {
+    let flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerHTML = "🌸";
+    flower.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(flower);
+    setTimeout(() => flower.remove(), 6000);
+  }, 700);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photos</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f5;
+      text-align: center;
+      font-family: Arial;
+      animation: fadeIn 1s;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    img {
+      width: 220px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background: #d6336c;
+      color: white;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Our Memories 💕</h1>
+
+<div class="gallery">
+  <img src="images/photo1.jpg.jpeg">
+  <img src="images/photo2.jpg.jpeg">
+  <img src="images/photo3.jpg.jpeg">
+</div>
+
+<!-- Buttons -->
+<div style="margin-top: 20px;">
+  <button onclick="location.href='anniversary.html'">🏠 Back to Home</button>
+  <button onclick="location.href='message.html'">💌 Message</button>
+</div>
+
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  if (localStorage.getItem("musicPlaying") === "true") {
+    document.getElementById("bg-music").play();
+  }
+
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 500);
+</script>
+
+</body>
+</html>

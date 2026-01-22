@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Love Journey 💕</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .event {
+      background: white;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .event:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Modal */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background: white;
+      margin: auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .modal-content p {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #d6336c;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Our Love Journey 💕</h1>
+
+<div class="timeline">
+  <div class="event" onclick="openModal('wedding')">💒 Wedding Day</div>
+  <div class="event" onclick="openModal('home')">🏡 First Home</div>
+  <div class="event" onclick="openModal('family')">👨‍👩‍👧 Family Grows</div>
+  <div class="event" onclick="openModal('25yrs')">✨ 25 Years Together</div>
+</div>
+
+<!-- Modals -->
+<div id="wedding" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('wedding')">&times;</span>
+    <img src="images/wedding.jpg" alt="Wedding Day">
+    <p>Two hearts, one promise</p>
+  </div>
+</div>
+
+<div id="home" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('home')">&times;</span>
+    <img src="images/home.jpg" alt="First Home">
+    <p>A place filled with love and laughter</p>
+  </div>
+</div>
+
+<div id="family" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('family')">&times;</span>
+    <img src="images/family.jpg.jpeg" alt="Family Grows">
+    <p>Our greatest blessing</p>
+  </div>
+</div>
+
+<div id="25yrs" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('25yrs')">&times;</span>
+    <img src="images/25years.jpg" alt="25 Years Together">
+    <p>Still holding hands, still in love</p>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Close modal if click outside content
+  window.onclick = function(event) {
+    const modals = ['wedding','home','family','25yrs'];
+    modals.forEach(id => {
+      const modal = document.getElementById(id);
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Message</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #ffe4e1, #fff0f5);
+      font-family: "Comic Sans MS", cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #d6336c;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    a, button {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #d6336c;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 20px;
+      cursor: pointer;
+      border: none;
+    }
+
+    a:hover, button:hover {
+      background: #b82a5b;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>25 Years of Love 💍</h1>
+
+    <p>
+      Dear Amma & Achaa ❤️<br><br>
+      25 years of love, patience, and togetherness.  
+      Your journey inspires us every day.  
+      Thank you for teaching us what true love means.  
+      May your bond stay strong forever ✨
+    </p>
+
+    <p>With all our love 💖</p>
+
+    <div class="button-group">
+      <a href="photos.html">⬅ Back to Photos</a>
+      <button onclick="location.href='thankyou.html'">🙏 Thank You</button>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    if (localStorage.getItem("musicPlaying") === "true") {
+      music.play();
+    }
+  </script>
+
+</body>
+</html>
